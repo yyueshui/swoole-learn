@@ -6,7 +6,7 @@
  * Time: 下午10:41
  */
 
-class client
+class client2
 {
 	private $client;
 
@@ -17,7 +17,7 @@ class client
 
 	public function connect()
 	{
-		if(!$this->client->connect('127.0.0.1', 9501, 1)) {
+		if(!$this->client->connect('127.0.0.1', 9502, 1)) {
 			echo "Error: {$this->client->errCode}, {$this->client->errMsg}\n";
 		}
 
@@ -31,5 +31,5 @@ class client
 	}
 }
 
-$client = new client();
+$client = new client2();
 $client->connect();

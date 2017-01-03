@@ -1,7 +1,6 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: yuanyueshui
  * Date: 2016/12/28
  * Time: 下午10:00
  */

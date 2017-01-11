@@ -23,6 +23,8 @@ $server->BaseProcess = 'I am base process.';
 $server->ManagerToWorker = '';
 $server->MasterToManager = '';
 
+//三种进程的OnStart方法被回调的时候都有一定的延迟，底层事实上已经完工了fork的行为，才回调的，因此，默认启动的时候，我们在OnMasterStart、OnManagerStart中写入的数据并不能按预期被fork到Manager进程或者Worker进程。
+//测试方法，kill -10 masterPid  重启worker，  kill -15 masterPid  终止master进程
 // 为了便于阅读，以下回调方法按照被起调的顺序组织
 // 1. 首先启动Master进程
 $server->on('start', function(swoole_server $server){
